@@ -7,6 +7,7 @@
 #include <getopt.h>
 
 #include "ttylog.h"
+#include "read.h"
 
 #ifndef TTYLOG_VERSION
 #define TTYLOG_VERSION "0.0.1"
@@ -17,6 +18,7 @@ struct ttylog_options opts = {
 	.version = false,
 	.filefmt = NULL,
 	.needle = NULL,
+	.link = NULL,
 	.nn = 0,
 	.buffsize = 1024
 };
@@ -102,6 +104,23 @@ static bool parse_args(int argc, char *argv[])
 	return true;
 }
 
+static bool check_options(void)
+{
+	/* check options */
+	if(opts.filefmt == NULL)
+	{
+		fprintf(stderr, "'--format' option must be specified.\n");
+		return false;
+	}
+	if(opts.needle == NULL)
+	{
+		fprintf(stderr, "'--search' option must be specified.\n");
+		return false;
+	}
+
+	return true;
+}
+
 int main(int argc, char *argv[])
 {
 	if(!parse_args(argc, argv))
@@ -120,6 +139,13 @@ int main(int argc, char *argv[])
 		show_version();
 		return 0;
 	}
+
+	if(!check_options())
+	{
+		return 1;
+	}
+	
+	read_stdin(&opts);
 
 	return 0;
 }
