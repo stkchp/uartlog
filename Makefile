@@ -2,7 +2,7 @@ CC = clang
 LD = clang
 OBJS = ttylog.o read.o write.o
 
-CFLAGS = -pipe -Wall -march=native -O3 -std=c11
+CFLAGS = -pipe -Wall -march=native -O3 -std=c11 -D_GNU_SOURCE
 
 #
 # build
