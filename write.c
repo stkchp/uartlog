@@ -14,7 +14,7 @@
 
 static void clear_filename(struct write_context *ctx)
 {
-	memset(ctx->filename, '\0', TTYLOG_MAXPATH);
+	memset(ctx->filename, '\0', UARTLOG_MAXPATH);
 	ctx->length = 0;
 }
 
@@ -74,7 +74,7 @@ static bool renew_filename(struct write_context *ctx)
 		}
 
 		/* time -> filename */
-		ctx->length = strftime(ctx->filename, TTYLOG_MAXPATH, ctx->fmt, tptr);
+		ctx->length = strftime(ctx->filename, UARTLOG_MAXPATH, ctx->fmt, tptr);
 		if(ctx->length == 0) {
 			clear_filename(ctx);
 			return false;

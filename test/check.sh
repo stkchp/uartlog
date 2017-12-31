@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CURDIR=$(dirname $0)
-TTYLOG=$CURDIR/../ttylog
+cd $(dirname $0)
+UARTLOG=../uartlog
 STATUS=0
 
 last() {
@@ -25,4 +25,4 @@ echo_random() {
 
 trap last 1 2 3 15
 
-echo_random | $TTYLOG -s "new file" -l "$CURDIR/latest.log" -f "$CURDIR/%H%M%S.log"
+echo_random | $UARTLOG -s "new file" -l latest.log -f %H%M%S.log

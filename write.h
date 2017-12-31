@@ -1,18 +1,18 @@
 // SPDX-License-Identifier: MIT
 
-#ifndef TTYLOG_WRITE_H
-#define TTYLOG_WRITE_H
+#ifndef UARTLOG_WRITE_H
+#define UARTLOG_WRITE_H
 
 #include <stdbool.h>
 #include <stddef.h>
 
-#define TTYLOG_MAXPATH 4096
+#define UARTLOG_MAXPATH 4096
 
 struct write_context {
 	bool renew;
 	char *fmt;
 	char *link;
-	char filename[TTYLOG_MAXPATH];
+	char filename[UARTLOG_MAXPATH];
 	size_t length;
 };
 

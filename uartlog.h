@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
 
-#ifndef TTYLOG_TTYLOG_H
-#define TTYLOG_TTYLOG_H
+#ifndef UARTLOG_UARTLOG_H
+#define UARTLOG_UARTLOG_H
 
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
 
-struct ttylog_options {
+struct uartlog_options {
 	bool version;
 	bool usage;
 	char *filefmt;
@@ -17,6 +17,6 @@ struct ttylog_options {
 	size_t buffsize;
 };
 
-#define TTYLOG_EOVER_BUFFER 1
+#define UARTLOG_EOVER_BUFFER 1
 
 #endif

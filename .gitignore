@@ -1,4 +1,4 @@
 *.o
 *.swp
-/ttylog
+/uartlog
 /test/*.log

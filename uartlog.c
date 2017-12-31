@@ -6,14 +6,14 @@
 
 #include <getopt.h>
 
-#include "ttylog.h"
+#include "uartlog.h"
 #include "read.h"
 
-#ifndef TTYLOG_VERSION
-#define TTYLOG_VERSION "0.0.1"
+#ifndef UARTLOG_VERSION
+#define UARTLOG_VERSION "0.0.1"
 #endif
 
-struct ttylog_options opts = {
+struct uartlog_options opts = {
 	.usage   = false,
 	.version = false,
 	.filefmt = NULL,
@@ -39,7 +39,7 @@ static void show_usage(char *name)
 
 static void show_version(void)
 {
-	printf(" ttylog version: " TTYLOG_VERSION "\n");
+	printf(" uartlog version: " UARTLOG_VERSION "\n");
 	printf(" build date: " __TIME__ ", " __DATE__ "\n");
 }
 

@@ -19,7 +19,7 @@ static bool search_string(char *haystack, size_t hn, char *needle, size_t nn)
 	return true;
 }
 
-int read_stdin(struct ttylog_options *opts)
+int read_stdin(struct uartlog_options *opts)
 {
 	char *buffer = calloc(opts->buffsize, sizeof(char));
 
@@ -45,7 +45,7 @@ int read_stdin(struct ttylog_options *opts)
 			i++;
 			if(i >= opts->buffsize)
 			{
-				rc = TTYLOG_EOVER_BUFFER;
+				rc = UARTLOG_EOVER_BUFFER;
 				goto end;
 			}
 		}

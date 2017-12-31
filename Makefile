@@ -1,15 +1,15 @@
 CC = clang
 LD = clang
-OBJS = ttylog.o read.o write.o
+OBJS = uartlog.o read.o write.o
 
 CFLAGS = -pipe -Wall -march=native -O3 -std=c11 -D_GNU_SOURCE
 
 #
 # build
 #
-all: ttylog
+all: uartlog
 
-ttylog: $(OBJS)
+uartlog: $(OBJS)
 	$(LD) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
 
 .c.o:
@@ -18,8 +18,8 @@ ttylog: $(OBJS)
 #
 # dependency
 #
-ttylog.o: ttylog.c ttylog.h read.h
-read.o: read.c read.h write.h ttylog.h
+uartlog.o: uartlog.c uartlog.h read.h
+read.o: read.c read.h write.h uartlog.h
 write.o: write.c write.h
 
 #
@@ -27,4 +27,4 @@ write.o: write.c write.h
 #
 clean:
 	rm -f $(OBJS)
-	rm -f ttylog
+	rm -f uartlog

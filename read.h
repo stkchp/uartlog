@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-#ifndef TTYLOG_READ_H
-#define TTYLOG_READ_H
+#ifndef UARTLOG_READ_H
+#define UARTLOG_READ_H
 
-#include "ttylog.h"
+#include "uartlog.h"
 
-int read_stdin(struct ttylog_options *opts);
+int read_stdin(struct uartlog_options *opts);
 
 #endif
