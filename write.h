@@ -11,6 +11,7 @@
 struct write_context {
 	bool renew;
 	char *fmt;
+	char *link;
 	char filename[TTYLOG_MAXPATH];
 	size_t length;
 };

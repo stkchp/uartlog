@@ -28,6 +28,7 @@ int read_stdin(struct ttylog_options *opts)
 	int rc = 0;
 	struct write_context ctx = {0};
 	ctx.fmt = opts->filefmt;
+	ctx.link = opts->link;
 
 	while((c = fgetc(stdin)) != EOF)
 	{
